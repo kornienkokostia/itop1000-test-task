@@ -10,15 +10,15 @@ export class HeaderComponent implements OnInit {
   usdRate?: string = undefined;
   eurRate?: string = undefined;
   ngOnInit(): void {
-    this.onRequest();
+    // this.onRequest();
   }
   onRequest = async () => {
     this.usdRate = await CurrencyService()
       .convertCurrency('USD', 'UAH')
-      .then((res) => res.result.toFixed(2));
+      .then((res) => res.info.rate.toFixed(2));
 
     this.eurRate = await CurrencyService()
       .convertCurrency('EUR', 'UAH')
-      .then((res) => res.result.toFixed(2));
+      .then((res) => res.info.rate.toFixed(2));
   };
 }

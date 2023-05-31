@@ -1,5 +1,8 @@
 import { useHttp } from './http.hook';
-import { CurrencyResponce } from './../models/currency';
+import {
+  CurrencyResponce,
+  CurrencySymbolsResponse,
+} from './../models/currency';
 
 const CurrencyService = () => {
   const { request } = useHttp();
@@ -12,7 +15,10 @@ const CurrencyService = () => {
       }`
     )) as CurrencyResponce;
 
-  return { convertCurrency };
+  const getAllCurrencies = async () =>
+    (await request(`${apiBase}/symbols`)) as CurrencySymbolsResponse;
+
+  return { convertCurrency, getAllCurrencies };
 };
 
 export default CurrencyService;

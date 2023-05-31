@@ -1,0 +1,14 @@
+<div class="input-field text-input">
+  <input class="input-field-input" type={{inputType}} (focus)="handleFocus($event)" (blur)="handleFocus($event)"
+    (keydown)="handleKeyDown($event)" [formControl]="control" />
+  <span [ngClass]="['input-field-title', inputFocused ? 'active' : '']">{{inputTitle}}</span>
+
+  <!-- <div class={`input-field-error ${errors !== undefined ? 'active' : ''}`}>
+    <img
+      class="input-field-error-img"
+      src="https://kornienkokostia.github.io/online-store/assets/images/icons/error.svg"
+      alt="error"
+    ></img>
+    <span class="input-field-error-msg">{errors !== undefined ? errors.message : ''}</span>
+  </div> -->
+</div>

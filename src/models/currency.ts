@@ -9,3 +9,12 @@ export interface CurrencyResponce {
   };
   result: number;
 }
+
+export interface CurrencySymbolsResponse {
+  symbols: { [key: string]: Symbol };
+}
+
+export interface Symbol {
+  description: string;
+  code: string;
+}
