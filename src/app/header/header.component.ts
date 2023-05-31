@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   usdRate?: string = undefined;
   eurRate?: string = undefined;
   ngOnInit(): void {
-    // this.onRequest();
+    this.onRequest();
   }
   onRequest = async () => {
     this.usdRate = await CurrencyService()
