@@ -60,7 +60,7 @@ export class ConverterComponent implements OnInit {
       if (this.currencyOneInput.value && this.currencyTwoInput.value) {
         this.inputs.last.inputFocused = true;
         this.currencyTwoInput.setValue(
-          await getResult(this.currencyOneInput.value, true),
+          await getResult(this.currencyOneInput.value),
           {
             emitEvent: false,
           }
