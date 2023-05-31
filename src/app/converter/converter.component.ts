@@ -38,7 +38,7 @@ export class ConverterComponent implements OnInit {
     this.currencyTwoInput.valueChanges.subscribe(async (val) => {
       if (val) {
         this.inputs.first.inputFocused = true;
-        this.currencyOneInput.setValue(await getResult(val), {
+        this.currencyOneInput.setValue(await getResult(val, true), {
           emitEvent: false,
         });
       }
